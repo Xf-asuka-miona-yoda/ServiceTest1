@@ -38,6 +38,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             musicBinder = (MusicService.MusicBinder) service;
+            musicBinder.initmediaplayer();
+            seekBar.setMax(musicBinder.mediaPlayer.getDuration());
+            musicLength.setText(format.format(musicBinder.mediaPlayer.getDuration())+"");
+            musicCur.setText("00:00");
         }
 
         @Override

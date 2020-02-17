@@ -13,7 +13,6 @@ import java.io.File;
 public class MusicService extends Service {
 
 
-
     private MusicBinder mbinder = new MusicBinder();
     class MusicBinder extends Binder{
         public MediaPlayer mediaPlayer = new MediaPlayer();
